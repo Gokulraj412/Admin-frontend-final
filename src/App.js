@@ -1,5 +1,5 @@
 import Sidebar from './Components/Sidebar';
-import Offcanvas from "./Components/Offcanvas"
+// import Offcanvas from "./Components/Offcanvas"
 import "./App.css"
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import React from 'react';
 import Dashboard from './Pages/Dashboard';
 import ViewProfile from './Pages/ViewProfile';
+import ViewUserprofile from './Pages/ViewUserprofile';
 import EditAstrologer from './Pages/EditAstrologer';
 
 function App() {
@@ -38,6 +39,8 @@ function App() {
           <Route path='/users' element={isAuthenticated ? <Users /> : <Navigate to="/" />} />
           <Route path='/addastrologers' element={isAuthenticated ? <Addastrologers /> : <Navigate to="/" />} />
           <Route path='/astrologer/:id' element={isAuthenticated ? <ViewProfile /> : <Navigate to="/" />} />
+          <Route path='/user/:id' element={isAuthenticated ? <ViewUserprofile /> : <Navigate to="/" />} />
+
           <Route path='/editastrologer/:id' element={isAuthenticated ? <EditAstrologer /> : <Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
