@@ -39,19 +39,7 @@ function ViewUserprofile() {
         fetchData();
     }, []);
 
-    async function handleDelete() {
-        setIsloading(true)
-        const res = await fetch(`https://shy-gold-sawfish-robe.cyclic.app/api/v1/astrologer/delete/${id}`, {
-            method: "DELETE"
-        })
-        console.log(res);
-        if (res.ok) {
-            alert("successfully deleted")
-            navigate("/astrologers")
-        } else {
-            alert("Try again")
-        }
-    }
+   
     return (
         <div className="infoContainer">
             {isLoading ?
@@ -103,11 +91,7 @@ function ViewUserprofile() {
                             <p>{users?.user?.loginTime ? moment(users?.user?.loginTime).format('MMMM Do YYYY, h:mm:ss a') : ''}</p>
                         </div>
                     </article>
-
-                    <div className="btnGroup">
-                        <button className="btns" onClick={() => navigate(`/edituser/${users?.user?._id}`)} disabled={isLoading}>Edit</button>
-                        <Button variant="danger" onClick={handleDelete} >Delete</Button>
-                    </div>
+                  
                 </main>
             }
         </div>
