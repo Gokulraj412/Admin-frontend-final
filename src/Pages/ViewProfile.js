@@ -156,6 +156,14 @@ function ViewProfile() {
                             <h5>Pincode</h5>
                             <p>{astrologers?.astrologer?.pincode}</p>
                         </div>
+                        <div className="my-4">
+                            <h5>Chat</h5>
+                            <p>{astrologers?.astrologer?.chat}</p>
+                        </div>
+                        <div className="my-4">
+                            <h5>Call</h5>
+                            <p>{astrologers?.astrologer?.call}</p>
+                        </div>
 
                         <h3 style={{ textDecoration: "underline", marginBottom: "20px" }}>
                             Astrology Related Details

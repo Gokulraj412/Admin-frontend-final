@@ -192,7 +192,7 @@ function Addastrologers() {
             astrologerDetails.set("astrologerID", astroID)
             console.log(astrologerDetails);
             const response = await fetch("https://shy-gold-sawfish-robe.cyclic.app/api/v1/astrologer/register", {
-                method: "POST",
+                method: "GET",
                 body: astrologerDetails
             });
             if (response.ok === false) {
@@ -383,6 +383,22 @@ function Addastrologers() {
                                     className="mb-3"
                                 >
                                     <Form.Control type="tel" placeholder="Pincode" name="pincode" {...register("pincode")} />
+                                </FloatingLabel>
+                            </div>
+                            <div className="twoCol" >
+                                <FloatingLabel
+                                    controlId="chat charges"
+                                    label="Chat charges"
+                                    className="mb-3"
+                                >
+                                    <Form.Control type="text" placeholder="Chat" name="chat" {...register("chat")} />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                    controlId="call charges"
+                                    label="Call charges"
+                                    className="mb-3"
+                                >
+                                    <Form.Control type="tel" placeholder="Call" name="call" {...register("call")} />
                                 </FloatingLabel>
                             </div>
                         </article>
