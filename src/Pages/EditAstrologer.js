@@ -36,7 +36,9 @@ function EditAstrologer() {
         astrologyExpertise: "",
         knowus: "",
         maxTime: "",
-        isActive: ""
+        isActive: "",
+        call:"",
+        chat:""
     })
     const [dob, setDob] = useState(null);
     const [doberr, setDoberr] = useState(false)
@@ -60,7 +62,9 @@ function EditAstrologer() {
         astrologyExpertise: "",
         knowus: "",
         maxTime: "",
-        isActive: ""
+        isActive: "",
+        call:"",
+        chat:""
     });
     const { id } = useParams()
     const navigate = useNavigate()
@@ -158,6 +162,8 @@ function EditAstrologer() {
                 updatedDetails.append("state", astrologers.state)
                 updatedDetails.append("country", astrologers.country)
                 updatedDetails.append("pincode", astrologers.pincode)
+                updatedDetails.append("call", astrologers.call)
+                updatedDetails.append("chat", astrologers.chat)
                 updatedDetails.append("institute", astrologers.institute)
                 updatedDetails.append("experience", astrologers.experience)
                 updatedDetails.append("astrologyDescription", astrologers.astrologyDescription)
@@ -358,6 +364,22 @@ function EditAstrologer() {
                                     className="mb-3"
                                 >
                                     <Form.Control type="tel" placeholder="Pincode" name="pincode" value={astrologers?.pincode} onChange={handleChange} />
+                                </FloatingLabel>
+                            </div>
+                            <div className="twoCol" >
+                                <FloatingLabel
+                                    controlId="chat charges"
+                                    label="Chat charges"
+                                    className="mb-3"
+                                >
+                                    <Form.Control type="text" placeholder="Chat" name="chat"  value={astrologers?.chat} onChange={handleChange} />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                    controlId="call charges"
+                                    label="Call charges"
+                                    className="mb-3"
+                                >
+                                    <Form.Control type="tel" placeholder="Call" name="call" value={astrologers?.call} onChange={handleChange} />
                                 </FloatingLabel>
                             </div>
                         </article>
